@@ -36,4 +36,4 @@ jobs:
             script: |
               git clone git@github.com:Jaga0605/Nodejs-automatyzacja.git
               cd nodejs-automatyzacja
-              npm instal
+              npm install
