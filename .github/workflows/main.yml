@@ -1,4 +1,4 @@
-name: Automatyzacja dla apki Node.js 
+name: Automatyzacja dla apki Node.js !
 on:
   push:
     branches:
@@ -34,6 +34,11 @@ jobs:
             password: ${{secrets.PASSWORD}}
             port: ${{secrets.PORT}}
             script: |
-              git clone git@github.com:Jaga0605/Nodejs-automatyzacja.git
-              cd nodejs-automatyzacja
-              npm install
+                if [ ! -d "Nodejes-automatyzacja" ]; then
+                    git clone git@github.com:Jaga0605/Nodejs-automatyzacja.git
+                else
+                    cd Nodejs-automatyzacja
+                    git pull origin main 
+                fi
+                cd Nodejs-automatyzacja
+                npm install
