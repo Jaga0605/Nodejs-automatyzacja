@@ -19,21 +19,21 @@ jobs:
        - name: Install Dependencies
          run: npm install
   
-  - name: Akceptacja klucza
-    run: |
-      mkdir -p ~/.ssh
-      ssh-keyscan -H ${{ secrets.HOST }} >> ~/.ssh/known_hosts
-      chmod 700 ~/.ssh
-      chmod 644 ~/.ssh/known_hosts
-
- - name: Połączenie z serwerem poprzez SSH
-    uses: appleboy/ssh-action@v1.2.2
-    with:
-        host: ${{secret.HOST}}
-        username: ${{secrets.USERNAME}}
-        password: ${{secret.PASSWORD}}
-        port: ${{secrets.PORT}}
-        script: |
-          git clone git@github.com:Jaga0605/Nodejs-automatyzacja.git
-          cd nodejs-automatyzacja
-          npm instal
+       - name: Akceptacja klucza
+         run: |
+            mkdir -p ~/.ssh
+            ssh-keyscan -H ${{ secrets.HOST }} >> ~/.ssh/known_hosts
+            chmod 700 ~/.ssh
+            chmod 644 ~/.ssh/known_hosts
+    
+       - name: Połączenie z serwerem poprzez SSH
+         uses: appleboy/ssh-action@v1.2.2
+         with:
+            host: ${{secret.HOST}}
+            username: ${{secrets.USERNAME}}
+            password: ${{secret.PASSWORD}}
+            port: ${{secrets.PORT}}
+            script: |
+              git clone git@github.com:Jaga0605/Nodejs-automatyzacja.git
+              cd nodejs-automatyzacja
+              npm instal
