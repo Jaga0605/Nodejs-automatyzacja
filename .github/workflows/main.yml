@@ -29,9 +29,9 @@ jobs:
        - name: Połączenie z serwerem poprzez SSH
          uses: appleboy/ssh-action@v1.2.2
          with:
-            host: ${{secret.HOST}}
+            host: ${{secrets.HOST}}
             username: ${{secrets.USERNAME}}
-            password: ${{secret.PASSWORD}}
+            password: ${{secrets.PASSWORD}}
             port: ${{secrets.PORT}}
             script: |
               git clone git@github.com:Jaga0605/Nodejs-automatyzacja.git
