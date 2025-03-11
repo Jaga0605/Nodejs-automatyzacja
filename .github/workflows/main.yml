@@ -19,7 +19,7 @@ jobs:
        - name: Install Dependencies
          run: npm install
   
-       - name: Akceptacja klucza
+       - name: Akceptacja klucza1
          run: |
             mkdir -p ~/.ssh
             ssh-keyscan -H ${{ secrets.HOST }} >> ~/.ssh/known_hosts
